@@ -2828,7 +2828,7 @@ js.executeScript("window.open()");
        HelperFunctions.staticWait(3); 
        test.info("Clicking on done button");
        doneButton.click();
-       HelperFunctions.waitForPageToLoad(5);
+       HelperFunctions.waitForPageToLoad(15);
        HelperFunctions.staticWait(3);
        test.info("Verified the content has ben created");
        Assert.assertTrue(webVariationContent.isDisplayed());
