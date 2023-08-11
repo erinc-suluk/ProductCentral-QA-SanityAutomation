@@ -1207,9 +1207,9 @@ public class SanityTestCases extends BasePage {
         ExtentTest test = extent.createTest(testName);
 
         try {
-            Driver.getDriver().get(read1.getCellData("VALUE", 15));
-            lpo.setLogin2();
-            pp.setBannerSticky(test);
+            Driver.getDriver().get(read1.getCellData("VALUE", 85));
+            lpo.setLogin4();
+            ap.setBannerSticky(test);
             test.pass("WEB_57 passed");
         } catch (Exception e) {
             String screenshotPath = takeScreenshot(testName);
@@ -1226,9 +1226,9 @@ public class SanityTestCases extends BasePage {
         ExtentTest test = extent.createTest(testName);
 
         try {
-            Driver.getDriver().get(read1.getCellData("VALUE", 15));
-            lpo.setLogin2();
-            pp.setBannerClose(test);
+            Driver.getDriver().get(read1.getCellData("VALUE", 85));
+            lpo.setLogin4();
+            ap.setBannerClose(test);
             test.pass("WEB_58 passed");
         } catch (Exception e) {
             String screenshotPath = takeScreenshot(testName);

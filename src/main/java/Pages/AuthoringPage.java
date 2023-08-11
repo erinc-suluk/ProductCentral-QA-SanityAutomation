@@ -25,6 +25,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -819,6 +820,12 @@ public class AuthoringPage extends HelperFunctions {
 	
 	@FindBy(xpath="//span[normalize-space()='Yes']")
 	private WebElement defaultYes;
+	
+	@FindBy(xpath="//div[contains(@class, 'outage')]")
+    private WebElement banner2;
+	
+	@FindBy(xpath="//span[contains(@aria-label, 'Banner')]")
+    private WebElement bannerClose;
 	
 	static Logger logger=Logger.getLogger("AuthoringPage");
 	
@@ -3388,6 +3395,81 @@ js.executeScript("window.open()");
 		    
 		   
 		  
+	}
+ public void setBannerSticky(ExtentTest test) throws Exception {
+		read1.setExcelFile("./testdata.xlsx", "STG");
+		test.info("Wait for the page to load.");
+	    HelperFunctions.waitForPageToLoad(15);
+	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 15);
+	    wait1.until(ExpectedConditions.visibilityOf(pageInfo));
+	    pageInfo.click();
+	    wait1.until(ExpectedConditions.visibilityOf(viewasPublish));
+	    viewasPublish.click();	    
+	    //((JavascriptExecutor)Driver.getDriver()).executeScript("window.open();");
+	    ArrayList<String> tabs=new ArrayList<String>(Driver.getDriver().getWindowHandles());
+	    Driver.getDriver().switchTo().window(tabs.get(1));
+	    //Driver.getDriver().get(read1.getCellData("VALUE", 84));
+	    HelperFunctions.waitForPageToLoad(15);
+	    wait1.until(ExpectedConditions.visibilityOf(banner2));
+	    test.info("Checking if the banner is displayed");
+	    if(banner2.isDisplayed()) {
+	        Assert.assertTrue(true);
+	    }else {
+	        String errorMessage = "banner is not displayed";
+	        logger.error(errorMessage);
+	        throw new Exception(errorMessage);
+	    }
+	    test.info("Scrolling down the bottom of the page");
+	    JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
+	    js.executeScript("window.scrollBy(0,document.body.scrollHeight)", ""); 
+	     HelperFunctions.staticWait(2);
+	        if(banner2.isDisplayed()) {
+	            Assert.assertTrue(true);
+	        }else {
+	            String errorMessage = "banner is not displayed";
+	            logger.error(errorMessage);
+	            throw new Exception(errorMessage);
+	        }
+	        test.info("Verified if the banner is sticky when scrolling down");
+	        HelperFunctions.staticWait(3);
+	}
+	public void setBannerClose(ExtentTest test) throws Exception {
+		read1.setExcelFile("./testdata.xlsx", "STG");
+		test.info("Wait for the page to load.");
+		HelperFunctions.waitForPageToLoad(15);
+	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 15);
+	    wait1.until(ExpectedConditions.visibilityOf(pageInfo));
+	    pageInfo.click();
+	    wait1.until(ExpectedConditions.visibilityOf(viewasPublish));
+	    viewasPublish.click();
+		 //((JavascriptExecutor)Driver.getDriver()).executeScript("window.open();");
+		    ArrayList<String> tabs=new ArrayList<String>(Driver.getDriver().getWindowHandles());
+		    Driver.getDriver().switchTo().window(tabs.get(1));
+		  //  Driver.getDriver().get(read1.getCellData("VALUE", 84));
+		    HelperFunctions.waitForPageToLoad(15);
+		   // WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 15);
+		    wait1.until(ExpectedConditions.visibilityOf(banner2));
+	    test.info("Checking if the banner is displayed");
+	    if(banner2.isDisplayed()) {
+	        Assert.assertTrue(true);
+	    }else {
+	        String errorMessage = "banner is not displayed";
+	        logger.error(errorMessage);
+	        throw new Exception(errorMessage);
+	    }
+	    HelperFunctions.staticWait(2);
+	    test.info("Clicking enter to close banner");
+	    bannerClose.sendKeys(Keys.ENTER);
+	    HelperFunctions.staticWait(2);
+	    if(!banner2.isDisplayed()) {
+	        Assert.assertTrue(true);
+	    }else {
+	        String errorMessage = "banner is not displayed";
+	        logger.error(errorMessage);
+	        throw new Exception(errorMessage);
+	    }
+	    test.info("Verified the banner is closed");
+	    HelperFunctions.staticWait(3);
 	}
 
 }
