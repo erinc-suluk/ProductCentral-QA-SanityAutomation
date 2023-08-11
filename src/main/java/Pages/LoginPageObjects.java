@@ -2,6 +2,8 @@ package Pages;
 
 
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,9 +52,12 @@ public class LoginPageObjects extends HelperFunctions{
 	@FindBy(xpath="//div[@class='cmp-product-list__cards-container']//a")
 	private static List<WebElement> productLinks;
 	
+	@FindBy(xpath="(//div[@class='cmp-tiles__products-link'])[1]")
+	private WebElement logintoMyproducts;
+	
 	ReadXLSdata read1=new ReadXLSdata();
 	
-	public void setLogin() throws Exception {
+	/*public void setLogin() throws Exception {
 		read1.setExcelFile("./testdata.xlsx", "QA");
 		email.sendKeys(read1.getCellData("DATA", 1));
 		next.click();
@@ -73,7 +78,7 @@ public class LoginPageObjects extends HelperFunctions{
 	    loginLink2.click();
 	    HelperFunctions.staticWait(5);
 	    
-	}
+	}*/
 	
 	public void setLoginAuthor() {
 		email.sendKeys("erincbaser@gmail.com");
@@ -105,6 +110,148 @@ public class LoginPageObjects extends HelperFunctions{
 	public void setSignInButton() {
 		signInButton.click();
 	}
+	
+	public void setLogin() throws Exception {
+		HelperFunctions.waitForPageToLoad(5);
+		JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
+	    js2.executeScript("window.scrollBy(0,250)", "");
+	    HelperFunctions.staticWait(3);
+	    logintoMyproducts.click();
+	    //loginLink2.click();
+	   // HelperFunctions.staticWait(5);
+		HelperFunctions.waitForPageToLoad(5);
+		read1.setExcelFile("./testdata.xlsx", "QA");
+		email.sendKeys(read1.getCellData("VALUE", 44));
+		HelperFunctions.staticWait(3);
+		next.click();
+		HelperFunctions.staticWait(3);
+		Robot rb= new Robot();
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    Thread.sleep(1000);
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    Thread.sleep(1000);
+	    rb.keyPress(KeyEvent.VK_ENTER);
+	    rb.keyRelease(KeyEvent.VK_ENTER);
+	    Thread.sleep(1000);
+	    rb.keyPress(KeyEvent.VK_ALT);
+	    Thread.sleep(1000);
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    Thread.sleep(1000);
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    Thread.sleep(1000);
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    Thread.sleep(1000);
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    Thread.sleep(1000);
+	    rb.keyRelease(KeyEvent.VK_ALT);
+	    Thread.sleep(1000);
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    Thread.sleep(1000);
+	    rb.keyPress(KeyEvent.VK_ENTER);
+	    rb.keyRelease(KeyEvent.VK_ENTER);
+	    Thread.sleep(1000);
+	    HelperFunctions.waitForPageToLoad(5);
+	    
+	}
+	public void setLogin2() throws Exception {
+		HelperFunctions.waitForPageToLoad(15);
+		JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
+	    js2.executeScript("window.scrollBy(0,250)", "");
+	    HelperFunctions.staticWait(3);
+	    logintoMyproducts.click();
+	    //loginLink2.click();
+	   // HelperFunctions.staticWait(5);
+		HelperFunctions.waitForPageToLoad(5);
+		read1.setExcelFile("./testdata.xlsx", "QA");
+		email.sendKeys(read1.getCellData("VALUE", 44));
+		HelperFunctions.staticWait(3);
+		next.click();
+		HelperFunctions.waitForPageToLoad(20);
+		
+		//HelperFunctions.staticWait(5);
+		
+	    
+	}
+	
+	public void setLogin3() throws Exception {
+		//HelperFunctions.waitForPageToLoad(5);
+		//JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
+	   // js2.executeScript("window.scrollBy(0,250)", "");
+	   // HelperFunctions.staticWait(3);
+	   // logintoMyproducts.click();
+	    //loginLink2.click();
+	   // HelperFunctions.staticWait(5);
+		HelperFunctions.waitForPageToLoad(15);
+		read1.setExcelFile("./testdata.xlsx", "QA");
+		email.sendKeys(read1.getCellData("VALUE", 44));
+		HelperFunctions.staticWait(3);
+		next.click();
+		HelperFunctions.staticWait(5);
+		Robot rb= new Robot();
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    HelperFunctions.staticWait(2);
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    HelperFunctions.staticWait(2);
+	    rb.keyPress(KeyEvent.VK_ENTER);
+	    rb.keyRelease(KeyEvent.VK_ENTER);
+	    HelperFunctions.staticWait(2);
+	   /* rb.keyPress(KeyEvent.VK_ALT);
+	    HelperFunctions.staticWait(2);
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    HelperFunctions.staticWait(2);
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    HelperFunctions.staticWait(2);
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    Thread.sleep(1000);
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    Thread.sleep(1000);
+	    rb.keyRelease(KeyEvent.VK_ALT);
+	    HelperFunctions.staticWait(2);
+	    rb.keyPress(KeyEvent.VK_TAB);
+	    rb.keyRelease(KeyEvent.VK_TAB);
+	    HelperFunctions.staticWait(2);
+	    rb.keyPress(KeyEvent.VK_ENTER);
+	    rb.keyRelease(KeyEvent.VK_ENTER);
+	    HelperFunctions.staticWait(2);*/
+	    HelperFunctions.waitForPageToLoad(15);
+	
+	    
+	}
+	public void setLogin4() throws Exception {
+		//HelperFunctions.waitForPageToLoad(5);
+		//JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
+	   // js2.executeScript("window.scrollBy(0,250)", "");
+	   // HelperFunctions.staticWait(3);
+	   // logintoMyproducts.click();
+	    //loginLink2.click();
+	   // HelperFunctions.staticWait(5);
+		HelperFunctions.waitForPageToLoad(5);
+		HelperFunctions.staticWait(5);
+		read1.setExcelFile("./testdata.xlsx", "QA");
+		email.sendKeys(read1.getCellData("VALUE", 44));
+		HelperFunctions.staticWait(3);
+		next.click();
+	    HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.staticWait(3);
+	
+	    
+	}
+	
+	
+	
 	
 
 }

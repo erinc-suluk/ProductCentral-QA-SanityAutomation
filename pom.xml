@@ -75,6 +75,92 @@
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
+            <plugin>
+                    <groupId>ch.fortysix</groupId>
+                    <artifactId>maven-postman-plugin</artifactId>
+                    <version>0.1.6</version>
+                    <configuration>
+                        <skip>false</skip>
+                        <from>no-reply@pwc.com</from>
+
+
+                        <subject>${subject}</subject>
+
+
+                        <failonerror>true</failonerror>
+
+                        <htmlMessage>
+                                    <![CDATA[
+                                    <p>Link to Sanity Test Cases ${jira}
+                                    <img src="https://drive.google.com/uc?export=view&id=1k-dQaNDv9ltSwa3GcshYrK4xFWgrrZ_q" width="50%" style="margin: 0; border: 0; padding: 0; display: block;">
+                                    Hello</p>
+                                    <p>Automated test execution was performed for PC ${suite} cases. Please download the attached report for execution details.</p>
+ 
+                                   <p>This email address does not 
+accept responses. If you have any further questions, please contact 
+<a href= "mailto:erinc.suluk@net-effect.com">@Erinc Suluk </a>; <a href= "mailto:sumit.dhage@net-effect.com">@Sumit Dhage </a> and <a href= "mailto:ankit.i.sharma@pwc.com">@Ankit Sharma (CA) </a></p>
+                                    <p>Best Regards,</p>
+                                    <p>Product Central Automation Team</p>
+                                    ]]>
+                        </htmlMessage>
+
+                        <mailhost>10.240.200.253</mailhost>
+                        
+
+
+                        <mailssl>false</mailssl>
+
+                        <mailport>25</mailport>
+                        <mailAltConfig>true</mailAltConfig>
+
+
+                        <receivers>
+                       
+<receiver>erinc.suluk@net-effect.com</receiver>
+<receiver>yogita.karmarkar@net-effect.com</receiver>
+<receiver>sumit.dhage@net-effect.com</receiver>
+<receiver>gaurav.kad@net-effect.com</receiver>
+<receiver>akash.gawali@net-effect.com</receiver>
+<receiver>brennen.mccrae@pwc.com</receiver>
+<receiver>fnu.sanskriti@pwc.com</receiver>
+<receiver>saachi.sharma@net-effect.com</receiver>
+<receiver>utkarsh.neb@net-effect.com</receiver>
+<receiver>viraj.mandavkar@net-effect.com</receiver>
+<receiver>sakshi.negi@net-effect.com</receiver>
+<receiver>ankit.i.sharma@pwc.com</receiver>
+<receiver>hrestos.mrakas@net-effect.com</receiver>
+<receiver>abhinav.verma@net-effect.com</receiver>
+
+                        </receivers>
+
+                        <fileSets>
+                            <fileSet>
+
+                                <directory>${replocation}</directory>
+                                <includes>
+                                    <include>Sanity Automation Report for Product Central-*.html</include>
+                                </includes>
+		
+			
+			
+                            </fileSet>
+                        </fileSets>
+
+                    </configuration>
+                    <executions>
+                        <execution>
+
+                            <id>send a mail</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>send-mail</goal>
+                            </goals>
+                            <inherited>true</inherited>
+
+
+                        </execution>
+                    </executions>
+                </plugin>
         </plugins>
     </pluginManagement>
 </build>

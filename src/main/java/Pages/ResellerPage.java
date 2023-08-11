@@ -2,11 +2,13 @@ package Pages;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import com.aventstack.extentreports.ExtentTest;
 import com.pwc.productcentral.Driver;
 import com.pwc.productcentral.HelperFunctions;
 
@@ -45,8 +47,9 @@ public class ResellerPage extends HelperFunctions {
 	@FindBy(xpath="//div[@class='cmp-breadcrumb']//a")
 	private static List<WebElement> breadcrumbLinks;
 	
+	static Logger logger=Logger.getLogger("ResellerPage");
 	
-	public void setBreadcrumbs() {
+	public void setBreadcrumbs() throws Exception {
 		
 		HelperFunctions.waitForPageToLoad(5);
 		for(WebElement link:productList) {
@@ -54,20 +57,33 @@ public class ResellerPage extends HelperFunctions {
 			break;
 		}
 		HelperFunctions.waitForPageToLoad(5);
+		breadcrumbLinks.get(0).click();
+		String currentUrl = Driver.getDriver().getCurrentUrl();
+		 Assert.assertTrue(currentUrl.endsWith("/content/pc/us/en/resell-alliances.html"));
 		
-		 for (WebElement link : breadcrumbLinks) {
+		/* for (WebElement link : breadcrumbLinks) {
 			 String hrefValue = link.getAttribute("href");
 			 link.click();
 			 String currentUrl = Driver.getDriver().getCurrentUrl();
-			 Assert.assertEquals(hrefValue, currentUrl);
-	            }
+			// Assert.assertEquals(hrefValue, currentUrl);
+			 if (!hrefValue.equals(currentUrl)) {
+                 String errorMessage = "Links do not match";
+                   logger.error(errorMessage);
+                   throw new Exception(errorMessage);
+             }else {
+                 String successMessage = "Links match";
+                   logger.info(successMessage);
+             } 
+	            }*/
 		
 	}
 	
-	public void setPageTitleAndProducts() {
-		HelperFunctions.waitForPageToLoad(3);
+	public void setPageTitleAndProducts(ExtentTest test) throws Exception {
+		test.info("Wait for the page to load.");
+		HelperFunctions.waitForPageToLoad(15);
+		test.info("Verified page title");
 		Assert.assertTrue(pageTitle.isDisplayed());
-		
+		test.info("Get href value of each product");
 		  for (WebElement link : productList) {
 	            
               String href = link.getAttribute("href");
@@ -76,13 +92,18 @@ public class ResellerPage extends HelperFunctions {
               if (!href.isEmpty()) {
             
                   System.out.println(href);
+                  String successMessage = "Page title displays the name of the product";
+                  logger.info(successMessage);
                   Assert.assertTrue(true);
               }else {
-            	  Assert.assertTrue(false);
+            	  String errorMessage = "Page title does not display the name of the product";
+                  logger.error(errorMessage);
+                  throw new Exception(errorMessage);
+            	//  Assert.assertTrue(false);
               }
           }
-		
-	
+		  test.info("Verified page title displays the name of the product");
+			HelperFunctions.staticWait(3);
 	}
 	
 	

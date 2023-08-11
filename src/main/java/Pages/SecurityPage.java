@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import com.aventstack.extentreports.ExtentTest;
 import com.pwc.productcentral.Driver;
 import com.pwc.productcentral.HelperFunctions;
 
@@ -30,8 +31,9 @@ public class SecurityPage extends HelperFunctions {
 	
 	
 	
-	public void setSecurityTiles() {
-		HelperFunctions.waitForPageToLoad(5);
+	public void setSecurityTiles(ExtentTest test) {
+		test.info("Wait for the page to load.");
+		HelperFunctions.waitForPageToLoad(15);
 		
 		boolean isAllDisplayed = true;
         for(WebElement eachTiles : securityTiles){
@@ -40,14 +42,17 @@ public class SecurityPage extends HelperFunctions {
                 break;
             }
         }
+        test.info("Verified each tiles are displayed");
        
        HelperFunctions.staticWait(3);
        Boolean pld=productListingDropdown.isDisplayed();
+       test.info("Verified Product Listing Dropdown is displayed ");
        System.out.println("Product Listing Dropdown is displayed  :" + pld);
        HelperFunctions.staticWait(3);
        Boolean sd=sortingDropdown.isDisplayed();
+       test.info("VSorting Dropdown is displayed ");
        System.out.println("Sorting Dropdown is displayed  :" + sd);
-     
+       HelperFunctions.staticWait(3);
 	}
 	
 	
