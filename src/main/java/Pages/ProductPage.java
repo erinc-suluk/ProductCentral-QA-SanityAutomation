@@ -542,7 +542,12 @@ public void setNewTabAssets(ExtentTest test) throws Exception {
     test.info("Clicking on resource");
     //String hrefValue = resource2forProduct2.getAttribute("href");
     JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
-    executor.executeScript("arguments[0].click();", resource2forProduct2);
+    for(WebElement each:allresourcesContentLink) {
+    	if(each.getAttribute("href").contains(".pdf")) {
+    executor.executeScript("arguments[0].click();", each);
+    break;
+    	}
+    }
     //resource1.click();
     HelperFunctions.staticWait(3);
     test.info("Verified asset/page is loaded in the new tab");
