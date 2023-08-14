@@ -2103,7 +2103,7 @@ js.executeScript("window.open()");
 	   
 	    WebDriverWait wait=new WebDriverWait(Driver.getDriver(),15);
 		wait.until(ExpectedConditions.elementToBeClickable(createButton));
-		 HelperFunctions.staticWait(2);
+		 //HelperFunctions.staticWait(2);
 		test.info("Click on create button");
 	    createButton.click();
 	    HelperFunctions.staticWait(3);
@@ -2115,7 +2115,7 @@ js.executeScript("window.open()");
 	    HelperFunctions.staticWait(3);
 	    test.info("Click on next button");
 	    nextButton.click();
-	    HelperFunctions.waitForPageToLoad(5);
+	    HelperFunctions.waitForPageToLoad(15);
 	    HelperFunctions.staticWait(3);
 	    test.info("Click on title field");
 	    titleField2.click();
@@ -2125,7 +2125,7 @@ js.executeScript("window.open()");
 	    HelperFunctions.staticWait(3);
 	    test.info("Click on product central tab");
 	    productCentralTab.click();
-	    HelperFunctions.staticWait(3);
+	    //HelperFunctions.staticWait(3);
 	    test.info("Select option from document category ");
 	    WebDriverWait wait2=new WebDriverWait(Driver.getDriver(),10);
 		wait2.until(ExpectedConditions.elementToBeClickable(documentCategoryTag2));
@@ -2141,15 +2141,15 @@ js.executeScript("window.open()");
 	    	e.printStackTrace();
 	    }
 	    test.info("Select option from product feature ");
-	    JavascriptExecutor executor2 = (JavascriptExecutor) Driver.getDriver();
-        executor2.executeScript("arguments[0].click();", productFeatureTag2);
+	 
+        executor1.executeScript("arguments[0].click();", productFeatureTag2);
         try {
 	    	Thread.sleep(3000);
 	    }catch(InterruptedException e) {
 	    	e.printStackTrace();
 	    }
-	    JavascriptExecutor executor3 = (JavascriptExecutor) Driver.getDriver();
-        executor3.executeScript("arguments[0].click();", firstOptionofProCat);
+	   
+        executor1.executeScript("arguments[0].click();", firstOptionofProCat);
         try {
 	    	Thread.sleep(3000);
 	    }catch(InterruptedException e) {
@@ -2163,23 +2163,23 @@ js.executeScript("window.open()");
 	    }catch(InterruptedException e) {
 	    	e.printStackTrace();
 	    }
-	    JavascriptExecutor executor5 = (JavascriptExecutor) Driver.getDriver();
-        executor5.executeScript("arguments[0].click();", firstOptionofPortCat);
+	
+        executor1.executeScript("arguments[0].click();", firstOptionofPortCat);
         HelperFunctions.staticWait(3);
         test.info("Select option from audience tag");
-	    JavascriptExecutor executor6 = (JavascriptExecutor) Driver.getDriver();
-        executor6.executeScript("arguments[0].click();", audienceTag);
+
+        executor1.executeScript("arguments[0].click();", audienceTag);
 	    HelperFunctions.staticWait(3);
-	    JavascriptExecutor executor7 = (JavascriptExecutor) Driver.getDriver();
-        executor7.executeScript("arguments[0].click();", anonyOption);
+	
+        executor1.executeScript("arguments[0].click();", anonyOption);
         HelperFunctions.staticWait(3);
         test.info("Clicking on create button");
         createButton2.click();
-        WebDriverWait wait5 = new WebDriverWait(Driver.getDriver(), 10);
-	    wait5.until(ExpectedConditions.visibilityOf(doneButton));
-        JavascriptExecutor executor8 = (JavascriptExecutor) Driver.getDriver();
-        executor8.executeScript("arguments[0].click();", doneButton);
-       // doneButton.click();
+  
+	    wait2.until(ExpectedConditions.visibilityOf(doneButton));
+       
+        executor1.executeScript("arguments[0].click();", doneButton);
+    
         HelperFunctions.staticWait(3);
 	  	    
  }

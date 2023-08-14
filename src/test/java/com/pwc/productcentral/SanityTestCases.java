@@ -1208,7 +1208,7 @@ public class SanityTestCases extends BasePage {
 
         try {
             Driver.getDriver().get(read1.getCellData("VALUE", 85));
-            lpo.setLogin4();
+            //lpo.setLogin4();
             ap.setBannerSticky(test);
             test.pass("WEB_57 passed");
         } catch (Exception e) {
@@ -1677,7 +1677,7 @@ public class SanityTestCases extends BasePage {
 
 	    try {
 	        Driver.getDriver().get(read1.getCellData("VALUE", 55));
-	       // lpo.setLogin4();
+	        lpo.setLogin4();
 	        ap.setBannerTextField(test);
 	        test.pass("WEB_89 passed");
 	    } catch (Exception e) {

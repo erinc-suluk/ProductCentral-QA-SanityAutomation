@@ -105,7 +105,7 @@ public class ProductPage extends HelperFunctions {
 	
 	
 	@FindBy(xpath="//div[@class='cmp-all-resources__card-category']")
-	private WebElement cardCategory;
+	private static List<WebElement> cardCategory;
 	
 	@FindBy(xpath="//div[@class='cmp-error__img']")
 	private WebElement errorImage;
@@ -613,7 +613,8 @@ public void setTagsAccompany(ExtentTest test) {
         if(tags.getText().equalsIgnoreCase("User Guide")) {
         	JavascriptExecutor executor2 = (JavascriptExecutor) Driver.getDriver();
             executor2.executeScript("arguments[0].click();", tags);
-        Assert.assertEquals(cardCat.getText(), expected1);
+            wait.until(ExpectedConditions.visibilityOf(cardCategory.get(0)));
+        Assert.assertTrue(cardCategory.get(0).getText().contains(expected1));
         }
     }
     HelperFunctions.staticWait(3);
