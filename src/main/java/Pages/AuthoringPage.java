@@ -701,7 +701,7 @@ public class AuthoringPage extends HelperFunctions {
 	@FindBy(xpath="//select[@name='./product']")
 	private WebElement bannerProduct;
 	
-	@FindBy(xpath="//div[contains(@title, 'Footer')]")
+	@FindBy(xpath="//div[contains(@title, 'Privacy Hub Footer')]")
 	private WebElement phFooter;
 	
 	@FindBy(xpath="//label[normalize-space()='Footer Text *']")
