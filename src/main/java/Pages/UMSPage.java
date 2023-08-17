@@ -1286,17 +1286,19 @@ public class UMSPage extends HelperFunctions {
 		email.sendKeys(read1.getCellData("VALUE", 44));
 		next.click();
 		HelperFunctions.waitForPageToLoad(15);
+		WebDriverWait wait=new WebDriverWait(Driver.getDriver(),10);
+		wait.until(ExpectedConditions.visibilityOf(addUser));
 		addUser.click();
 		HelperFunctions.staticWait(3);
 		Driver.getDriver().get(read1.getCellData("VALUE", 77));
 		//Driver.getDriver().get("https://ums-productcentral-qa.pwc.com/ums");
 		HelperFunctions.waitForPageToLoad(15);
-	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+	    //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 	    wait.until(ExpectedConditions.visibilityOf(searchCompany));
 	    HelperFunctions.staticWait(3);
 		productsTab.click();
-		HelperFunctions.staticWait(15);
-		WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 15);
+		//HelperFunctions.staticWait(15);
+		WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 25);
 		wait1.until(ExpectedConditions.visibilityOf(searchCompany));
 		String auto="automation product1";
 		searchCompany.sendKeys(auto);
@@ -1470,10 +1472,28 @@ public class UMSPage extends HelperFunctions {
         executor2.executeScript("arguments[0].click();", downloadLink);
         test.info("Clicked on download link");
 		 HelperFunctions.staticWait(20);
-		 String directoryPath = "C:\\Users\\GLBL_RDP_USER_02\\Downloads";
+		 /*String directoryPath = "C:\\Users\\GLBL_RDP_USER_01\\Downloads";
 		 String expectedFileName = "UMS-CompanyDetails";
 
 		 File directory = new File(directoryPath);
+		 File[] files = directory.listFiles();
+
+		 boolean fileExists = false;
+		 if (files != null) {
+		     for (File file : files) {
+		         if (file.getName().startsWith(expectedFileName)) {
+		             fileExists = true;
+		             break;
+		         }
+		     }
+		 }
+
+		 Assert.assertTrue(fileExists);*/
+		 String expectedFileName = "UMS-CompanyDetails";
+		 String userHomeDirectory = System.getProperty("user.home");
+		 String downloadsDirectoryPath = userHomeDirectory + "\\Downloads";
+
+		 File directory = new File(downloadsDirectoryPath);
 		 File[] files = directory.listFiles();
 
 		 boolean fileExists = false;
