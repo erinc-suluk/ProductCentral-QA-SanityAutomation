@@ -1076,3 +1076,15 @@
 2023-08-14 20:11:50,884 [main] INFO HomePage - Texts are matching
 2023-08-14 20:11:50,905 [main] INFO HomePage - Texts are matching
 2023-08-14 20:11:52,915 [main] INFO HomePage - pdf viewer is displayed
+2023-08-18 00:15:31,751 [main] INFO ProductPage - Only footer content displayed
+2023-08-18 00:15:49,462 [main] INFO ProductPage - Footer content and links are displayed
+2023-08-18 00:16:29,958 [main] INFO ProductPage - My Products heading in the sitemap is visible
+2023-08-18 00:17:16,948 [main] INFO ProductPage - Error page appears
+2023-08-18 00:39:53,525 [main] ERROR AuthoringPage - Contents do not contain relevant title
+2023-08-18 00:57:27,183 [main] INFO ProductPage - All dropdowns are visible
+2023-08-18 00:58:05,249 [main] INFO AuthoringPage - Page is unpublished 
+2023-08-18 00:58:08,547 [main] INFO AuthoringPage - Publish info contains unpublished 
+2023-08-18 00:59:23,343 [main] INFO AuthoringPage - The date of publishing is correct
+2023-08-18 01:00:23,859 [main] INFO BasePage - All Sections On Header are displayed
+2023-08-18 01:11:52,581 [main] INFO AuthoringPage - Titles match
+2023-08-18 01:12:01,552 [main] INFO AuthoringPage - Titles match

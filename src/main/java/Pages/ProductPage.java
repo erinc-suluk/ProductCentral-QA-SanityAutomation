@@ -342,9 +342,11 @@ public class ProductPage extends HelperFunctions {
 	public void setFooterWithoutLogin(ExtentTest test) throws Exception {
 		 test.info("Wait for the page to load.");
 		HelperFunctions.waitForPageToLoad(10);
+		WebDriverWait wait=new WebDriverWait(Driver.getDriver(),15);
 		HelperFunctions.staticWait(3);
 		test.info("Scroll down to footer content");
 		HelperFunctions.scrollToElement(footerContent);
+		wait.until(ExpectedConditions.visibilityOf(footerContent));
 		test.info("Verified footer content and link group");
 	        if(footerContent.isDisplayed() && footerLinkGroup.isEnabled() ) {
 	        	String successMessage = "Only footer content displayed";
@@ -370,7 +372,7 @@ public class ProductPage extends HelperFunctions {
 		}catch(ElementClickInterceptedException e) {
 			HelperFunctions.scrollToElement(footerContent);
 		}
-		HelperFunctions.staticWait(3);
+		wait.until(ExpectedConditions.visibilityOf(footerContent));
 		test.info("Scroll down to footer content");
 		
 		
@@ -538,7 +540,7 @@ public void setNewTabAssets(ExtentTest test) throws Exception {
 	HelperFunctions.staticWait(3);*/
 	test.info("Scroll down all resources elements");
 	
-    HelperFunctions.staticWait(3);
+   // HelperFunctions.staticWait(3);
     test.info("Clicking on resource");
     //String hrefValue = resource2forProduct2.getAttribute("href");
     JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
@@ -657,8 +659,8 @@ public void setMyProductSearch(ExtentTest test) throws Exception {
 	HelperFunctions.staticWait(2);
 	test.info("Click on enter");
 	myProductSearchField.sendKeys(Keys.ENTER);
-	HelperFunctions.waitForPageToLoad(3);
-	HelperFunctions.staticWait(2);
+	HelperFunctions.waitForPageToLoad(10);
+	wait.until(ExpectedConditions.visibilityOf(sortingDropdown));
 	test.info("Veried required dropdowns are visible");
 	if(productDropdown.isEnabled() && catDropdown.isDisplayed() && sortingDropdown.isDisplayed()) {
 		String successMessage = "All dropdowns are visible";
