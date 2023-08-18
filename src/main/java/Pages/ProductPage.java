@@ -471,7 +471,7 @@ public void setDisplayResources(ExtentTest test) throws Exception {
 	 WebDriverWait wait=new WebDriverWait(Driver.getDriver(),15);
 	    ExpectedCondition<WebElement> condition=ExpectedConditions.elementToBeClickable(viewAll);
 	    wait.until(condition);
-	    HelperFunctions.staticWait(3);
+	    //HelperFunctions.staticWait(3);
 	viewAll.click();
 	test.info("Select a product in product container");
 	HelperFunctions.staticWait(2);
@@ -479,7 +479,7 @@ public void setDisplayResources(ExtentTest test) throws Exception {
 		allProducts2.get(1).click();
 		break;
     }
-    HelperFunctions.waitForPageToLoad(5);
+    HelperFunctions.waitForPageToLoad(15);
     HelperFunctions.staticWait(3);
     test.info("Scroll down all resources");
 	HelperFunctions.scrollToElement(allResources); 
