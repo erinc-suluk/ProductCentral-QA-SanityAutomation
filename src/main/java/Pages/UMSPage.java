@@ -1297,7 +1297,7 @@ public class UMSPage extends HelperFunctions {
 	    wait.until(ExpectedConditions.visibilityOf(searchCompany));
 	    HelperFunctions.staticWait(3);
 		productsTab.click();
-		//HelperFunctions.staticWait(15);
+		HelperFunctions.staticWait(10);
 		WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 25);
 		wait1.until(ExpectedConditions.visibilityOf(searchCompany));
 		String auto="automation product1";
