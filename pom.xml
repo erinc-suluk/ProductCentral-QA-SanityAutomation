@@ -117,20 +117,20 @@ accept responses. If you have any further questions, please contact
                         <receivers>
                        
 <receiver>erinc.suluk@net-effect.com</receiver>
-<receiver>yogita.karmarkar@net-effect.com</receiver>
-<receiver>sumit.dhage@net-effect.com</receiver>
-<receiver>akash.gawali@net-effect.com</receiver>
+<receiver>yogita.karmarkar@pwc.com</receiver>
+<receiver>sumit.dhage@pwc.com</receiver>
+<receiver>akash.gawali@pwc.com</receiver>
 <receiver>brennen.mccrae@pwc.com</receiver>
 <receiver>fnu.sanskriti@pwc.com</receiver>
-<receiver>saachi.sharma@net-effect.com</receiver>
-<receiver>utkarsh.neb@net-effect.com</receiver>
-<receiver>viraj.mandavkar@net-effect.com</receiver>
+<receiver>saachi.sharma@pwc.com</receiver>
+<receiver>utkarsh.neb@pwc.com</receiver>
+<receiver>viraj.mandavkar@pwc.com</receiver>
 <receiver>ankit.i.sharma@pwc.com</receiver>
-<receiver>hrestos.mrakas@net-effect.com</receiver>
-<receiver>abhinav.verma@net-effect.com</receiver>
+<receiver>hrestos.mrakas@pwc.com</receiver>
+<receiver>abhinav.verma@pwc.com</receiver>
 <receiver>gbl_dnp_rm_group@pwc.com</receiver>
-<receiver>rahul.khot@net-effect.com</receiver>
-
+<receiver>rahul.khot@pwc.com</receiver>
+<receiver>erinc.suluk@pwc.com</receiver>
                         </receivers>
 
                         <fileSets>
