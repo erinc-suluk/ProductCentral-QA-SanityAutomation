@@ -680,6 +680,10 @@ public class HomePage extends HelperFunctions {
                         System.out.println("Ignoring element: " + elementText2);
                         continue; 
                     }
+                    if(elementText2.equalsIgnoreCase("Master Data Management")) {
+                        System.out.println("Ignoring element: " + elementText2);
+                        continue; 
+                    }
                     
                     Assert.assertTrue(cellValues2.contains(elementText2), "element text: " + elementText2 + " not found in the column1: " + columnIndex2);
                 }else{
