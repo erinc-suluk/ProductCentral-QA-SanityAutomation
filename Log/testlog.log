@@ -1088,3 +1088,83 @@
 2023-08-18 01:00:23,859 - BasePage -INFO - All Sections On Header are displayed
 2023-08-18 01:11:52,581 - AuthoringPage -INFO - Titles match
 2023-08-18 01:12:01,552 - AuthoringPage -INFO - Titles match
+2023-08-24 00:06:17,145 - ProductPage -INFO - Only footer content displayed
+2023-08-24 00:06:33,865 - ProductPage -INFO - Footer content and links are displayed
+2023-08-24 00:07:48,410 - ProductPage -INFO - My Products heading in the sitemap is visible
+2023-08-24 00:08:35,258 - ProductPage -INFO - Error page appears
+2023-08-24 00:08:56,204 - ProductPage -INFO - All dropdowns are visible
+2023-08-24 00:09:33,006 - AuthoringPage -INFO - Page is unpublished 
+2023-08-24 00:09:36,310 - AuthoringPage -INFO - Publish info contains unpublished 
+2023-08-24 00:10:46,937 - AuthoringPage -INFO - The date of publishing is correct
+2023-08-24 00:11:26,347 - AuthoringPage -INFO - Titles match
+2023-08-24 00:11:35,725 - AuthoringPage -INFO - Titles match
+2023-08-24 00:11:51,486 - BasePage -INFO - All Sections On Header are displayed
+2023-08-24 00:15:01,665 - HomePage -INFO - LoginToMyProductLink elements are displayed
+2023-08-24 00:17:23,064 - HomePage -INFO - Product names match
+2023-08-24 00:17:29,151 - HomePage -INFO - Titles match
+2023-08-24 00:17:42,446 - HomePage -INFO - Titles match
+2023-08-24 00:18:04,534 - LegalPage -INFO - Document tiles are equal 3 lines
+2023-08-24 00:18:04,550 - LegalPage -INFO - Document tiles are equal 3 lines
+2023-08-24 00:18:04,562 - LegalPage -INFO - Document tiles are equal 3 lines
+2023-08-24 00:18:04,576 - LegalPage -INFO - Document tiles are equal 3 lines
+2023-08-24 00:18:04,588 - LegalPage -INFO - Document tiles are equal 3 lines
+2023-08-24 00:18:04,601 - LegalPage -INFO - Document tiles are equal 3 lines
+2023-08-24 00:18:04,614 - LegalPage -INFO - Document tiles are equal 3 lines
+2023-08-24 00:18:04,627 - LegalPage -INFO - Document tiles are equal 3 lines
+2023-08-24 00:18:04,639 - LegalPage -INFO - Document tiles are equal 3 lines
+2023-08-24 00:18:04,652 - LegalPage -INFO - Document tiles are equal 3 lines
+2023-08-24 00:18:16,669 - ProductListingPage -INFO - Result contains Nothing matches your results
+2023-08-24 00:18:42,305 - HomePage -INFO - This component contains a link/button for my product page
+2023-08-24 00:26:08,550 - ProductPage -INFO - First tab is active
+2023-08-24 00:26:15,033 - ProductPage -INFO - First tab is active
+2023-08-24 00:27:18,492 - BasePage -INFO - The collapse button is displayed
+2023-08-24 00:28:59,681 - HomePage -INFO - Each link is displayed
+2023-08-24 00:28:59,693 - HomePage -INFO - Each link is displayed
+2023-08-24 00:29:03,764 - HomePage -INFO - Each link is not displayed
+2023-08-24 00:29:03,776 - HomePage -INFO - Each link is not displayed
+2023-08-24 00:29:30,911 - ProductPage -INFO - all resources content extensions are correct
+2023-08-24 00:30:11,924 - HomePage -INFO - Results are sorted
+2023-08-24 00:30:24,799 - ProductListingPage -INFO - Texts are matching
+2023-08-24 00:30:34,511 - ProductListingPage -INFO - Texts are matching
+2023-08-24 00:31:34,107 - HomePage -INFO - Product Dropdown is enabled and visible
+2023-08-24 00:31:40,285 - HomePage -INFO - Category Dropdown is enabled and visible
+2023-08-24 00:31:52,608 - HomePage -INFO - Texts are matching
+2023-08-24 00:31:52,629 - HomePage -INFO - Texts are matching
+2023-08-24 00:31:54,192 - HomePage -INFO - pdf viewer is displayed
+2023-08-24 00:56:09,730 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,744 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,754 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,762 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,770 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,779 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,787 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,795 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,802 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,810 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,818 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,826 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,833 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,848 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,856 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,864 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,874 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,881 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,889 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,896 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,904 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,911 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,918 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,925 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,933 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,941 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,948 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,955 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,962 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,969 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,977 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,984 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,991 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:09,999 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:10,007 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:10,014 - ResellerPage -INFO - Page title displays the name of the product
+2023-08-24 00:56:10,022 - ResellerPage -INFO - Page title displays the name of the product

@@ -830,6 +830,20 @@ public class AuthoringPage extends HelperFunctions {
 	@FindBy(xpath="//button[contains(@aria-label, 'Security')]")
 	private WebElement removeSecurity;
 	
+	@FindBy(xpath="//div[@title='Embed HTML']")
+	private WebElement embedEdit;
+	
+	@FindBy(xpath="//textarea[@name='./html']")
+	private WebElement embedTextArea;
+	
+	@FindBy(xpath="//h1[normalize-space()='This is a Heading']")
+	private WebElement embedHeading;
+	
+	@FindBy(xpath="//p[normalize-space()='This is a paragraph.']")
+	private WebElement embedParag;
+	
+	
+	
 	static Logger logger=Logger.getLogger("AuthoringPage");
 	
 	
@@ -3485,5 +3499,44 @@ js.executeScript("window.open()");
 	    test.info("Verified the banner is closed");
 	    HelperFunctions.staticWait(3);
 	}
+	public void setEmbedHTML(ExtentTest test) throws Exception {
+		 read1.setExcelFile("./testdata.xlsx", "QA");
+		 test.info("Wait for the page to load.");
+		    //HelperFunctions.waitForPageToLoad(10);
+		    
+		    WebDriverWait wait=new WebDriverWait(Driver.getDriver(),15);
+		    ExpectedCondition<WebElement> condition=ExpectedConditions.elementToBeClickable(editButtonContent);
+		    wait.until(condition);
+		    editButtonContent.click();
+		    HelperFunctions.staticWait(2);
+		    test.info("Click on edit");
+		    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+		    js.executeScript("arguments[0].click();", embedEdit);
+		    wait.until(ExpectedConditions.visibilityOf(configure));
+		    configure.click();
+		    wait.until(ExpectedConditions.visibilityOf(embedTextArea));
+		    embedTextArea.click();
+		    HelperFunctions.staticWait(2);
+		    embedTextArea.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+		    HelperFunctions.staticWait(2);
+		    embedTextArea.sendKeys(Keys.chord(Keys.CONTROL, "c"));
+		    HelperFunctions.staticWait(2);
+		    embedTextArea.sendKeys(Keys.chord(Keys.CONTROL, "v"));
+		    HelperFunctions.staticWait(2);
+		    checkIcon.click();
+		    HelperFunctions.staticWait(3);
+		    ExpectedCondition<WebElement> condition2=ExpectedConditions.elementToBeClickable(previewButton);
+		    wait.until(condition2);
+		    previewButton.click();
+		    HelperFunctions.staticWait(2);
+		    Driver.getDriver().switchTo().frame(0);
+		    HelperFunctions.staticWait(2);
+		    wait.until(ExpectedConditions.visibilityOf(embedHeading));
+		    Assert.assertTrue(embedHeading.isDisplayed());
+		    HelperFunctions.staticWait(2);
+		    Assert.assertTrue(embedParag.isDisplayed());
+		    HelperFunctions.staticWait(2);
+		    
+	 }
 
 }

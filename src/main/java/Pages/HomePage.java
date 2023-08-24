@@ -680,10 +680,6 @@ public class HomePage extends HelperFunctions {
                         System.out.println("Ignoring element: " + elementText2);
                         continue; 
                     }
-                    if(elementText2.equalsIgnoreCase("Board Central")) {
-                        System.out.println("Ignoring element: " + elementText2);
-                        continue; 
-                    }
                     if(elementText2.equalsIgnoreCase("Master Data Management")) {
                         System.out.println("Ignoring element: " + elementText2);
                         continue; 
