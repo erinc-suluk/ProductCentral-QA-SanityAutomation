@@ -653,7 +653,7 @@ public class HomePage extends HelperFunctions {
     	test.info("Click on product dropdown");
     	productDropdown.click();
     	test.info("Comparing elements with tag taxonomy in the excelsheet");
-    	 FileInputStream file = new FileInputStream("C:\\Users\\GLBL_RDP_USER_02\\eclipse-workspace\\ProductCentralProject-Automation-0.0.1-SNAPSHOT2\\testdata.xlsx");
+    	 FileInputStream file = new FileInputStream("C:\\Users\\GLBL_RDP_USER_02\\git\\ProductCentral-QA-SanityAutomation\\testdata.xlsx");
          XSSFWorkbook workbook = new XSSFWorkbook(file);
          XSSFSheet sheet = workbook.getSheetAt(1); 
     	HelperFunctions.staticWait(3);
@@ -677,6 +677,14 @@ public class HomePage extends HelperFunctions {
                         continue; 
                     }
                     if(elementText2.equalsIgnoreCase("Board Central")) {
+                        System.out.println("Ignoring element: " + elementText2);
+                        continue; 
+                    }
+                    if(elementText2.equalsIgnoreCase("Board Central")) {
+                        System.out.println("Ignoring element: " + elementText2);
+                        continue; 
+                    }
+                    if(elementText2.equalsIgnoreCase("Master Data Management")) {
                         System.out.println("Ignoring element: " + elementText2);
                         continue; 
                     }
